@@ -1,0 +1,12 @@
+
+Warning! The following instructions should be followed by Windows users with Nvidia Graphics.
+
+Minimum Requirements:
+  OS: Windows 10 / 11
+  CPU: 4 cores / 8 threads (basically, any AMD (Ryzen 2000 series) / intel (9th gen.) CPU from 2018 & above)
+  GPU: Nvidia RTX 2000 series or higher. 4GB VRAM or higher is recommended.
+  RAM: 16GB or more
+
+Instructions:
+  1. Install GeForce Experience (if you haven't already) to install the latest Nvidia drivers.
+  2. 
