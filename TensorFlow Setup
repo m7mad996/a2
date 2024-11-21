@@ -1,5 +1,4 @@
-
-Warning! The following instructions should be followed by Windows users with Nvidia Graphics.
+Warning! The following instructions should be followed only by Windows users with Nvidia Graphics.
 
 Minimum Requirements:
   OS: Windows 10 / 11
@@ -7,6 +6,69 @@ Minimum Requirements:
   GPU: Nvidia RTX 2000 series or higher. 4GB VRAM or higher is recommended.
   RAM: 16GB or more
 
+Note #1: The following steps were performed on fresh installs of Windows 10 v22H2 & 11 v23H2 to ensure no issues are encountered.
+Note #2: In this tutorial, TensorFlow 2.10 will be installed & run from our Nvidia graphics card.
+Note #3: Follow this table if you wish to install another version of TensorFlow [Credit: Georges Assaf, LAU]: https://github.com/m7mad996/a2/blob/main/Attachments/TensorFlow%20Table.jpeg
+
 Instructions:
-  1. Install GeForce Experience (if you haven't already) to install the latest Nvidia drivers.
-  2. 
+  1. Install WinRAR
+    https://www.win-rar.com/download.html?L=0
+      
+  2. Install GeForce Experience to install the latest Nvidia drivers.
+    https://www.nvidia.com/en-us/geforce/geforce-experience/download/
+
+  3. Uninstall current Nvidia Framework SDK from Control Panel.
+    Search for "Control Panel" from the Start menu > set View By = "Category" > select "Uninstall a program" > double-click "Nvidia FrameView SDK some_version_number" > Uninstall.
+
+  4. Install CUDA v11.2
+    https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.89_win10.exe
+  Note: You may be warned that Visual Studio isn't installed during installation. You can ignore this message & proceed.
+
+  5. Download & extract CUDNN v8.1
+    https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.0.77/11.2_20210127/cudnn-11.2-windows-x64-v8.1.0.77.zip
+  Copy everything inside the "cuda" folder & paste them in C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2 (access "v11.2" folder > paste them there > choose "Copy & Replace").
+
+  6. Download both parts of Python 3.7
+    Part 1: https://github.com/m7mad996/a2/blob/main/Attachments/Python%20v3.7.0%20x64.part1.rar
+    Part 2: https://github.com/m7mad996/a2/blob/main/Attachments/Python%20v3.7.0%20x64.part2.rar
+  Once done, select them together & extract them as one file.
+  Run Python v3.7.0 x64.exe > make sure both "install launcher for all users" & "Add Python 3.7 to PATH" are ticked > "Install Now" > click "Disable Path Length Limit" > Close.
+  Restart your PC.
+  Type in "python --version" (without quotes) to check if no errors occur.
+  If an error is found (ex. "'python' is not recognized as an internal or external command, operable program or batch file.), Type "env" (without quotes) in the Start menu & hit ENTER 
+    > Environment Variables > double-click "Path" inside the first box (user variables) > add these 2 lines if they're not there:
+    C:\Users\A2\AppData\Local\Programs\Python\Python37\Scripts\
+    C:\Users\A2\AppData\Local\Programs\Python\Python37\
+    (replace "A2" with your username)
+    > restart your PC & try the "python --version" command (without quotes) in CMD.
+  Note: The official Python website provides the 32-bit version of v3.7 which caused me issues. 64-bit version is thusly needed for this operation.
+
+  7. Install TensorFlow v2.10 (run the following commands one-by-one in CMD)
+  	echo pip uninstall tensorflow
+	  pip install tensorflow==2.10.* --upgrade
+	  pip install tensorflow-gpu==2.10.0
+
+  8. Upgrade PIP
+    python -m pip install --upgrade pip
+
+  9. Install URLlib3
+    pip install urllib3==1.26.11
+
+  10. Install Jupyter Notebook
+    pip install notebook jupterlab
+  
+  11. Open Jupyter Notebook
+    Type in "python -m notebook" (without quotes) in CMD > open a new .ipynb file > run the following codes:
+
+      #1 
+      import tensorflow as tf
+      print("TensorFlow version:", tf.__version__)
+      # If result is "version 2.10", then it means TensorFlow is successfully installed.
+      # If an error occurs, close Jupyter Notebook, re-run the scripts in step 7, then try importing TensorFlow once more.
+
+      #2
+      print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))
+      print("Devices:", tf.config.list_physical_devices())
+      # If "Num GPUs Available:" is 1, then it means your GPU is recognized by TensorFlow.
+
+And that's it! You should now be able to utilize TensorFlow on your machine. Enjoy :D
