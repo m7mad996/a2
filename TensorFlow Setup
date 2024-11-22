@@ -1,4 +1,6 @@
 Warning! The following instructions should be followed only by Windows users with Nvidia Graphics.
+Note #1: Make sure that your laptop is plugged in during GPU Driver & CUDA Library installation.
+Note #2: You may encounter errors during PIP installations. Simply execute the superseding action or sript.
 
 Minimum Requirements:
   OS: Windows 10 / 11
@@ -55,7 +57,8 @@ Instructions:
     pip install urllib3==1.26.11
 
   10. Install Jupyter Notebook
-    pip install notebook jupterlab
+	pip install notebook 
+	pip install jupterlab
   
   11. Open Jupyter Notebook
     Type in "python -m notebook" (without quotes) in CMD > open a new .ipynb file > run the following codes:
