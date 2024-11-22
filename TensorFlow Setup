@@ -43,7 +43,8 @@ Instructions:
     C:\Users\A2\AppData\Local\Programs\Python\Python37\
     (replace "A2" with your username)
     > restart your PC & try the "python --version" command (without quotes) in CMD.
-  Note: The official Python website provides the 32-bit version of v3.7 which caused me issues. 64-bit version is thusly needed for this operation.
+  Note #1: Python 3.7 executable was split in two due to GitHub's 25MB limit per file.
+  Note #2: The official Python website provides the 32-bit version of v3.7 which caused me issues. 64-bit version is thusly needed for this operation.
 
   7. Install TensorFlow v2.10 (run the following commands one-by-one in CMD)
   	echo pip uninstall tensorflow
