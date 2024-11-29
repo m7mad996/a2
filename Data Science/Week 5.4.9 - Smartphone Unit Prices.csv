@@ -1,5 +1,5 @@
 "Brand","Model","Screen Size","RAM (GB)","Storage (GB)","Price ($)"
-"Apple","iPhone 13",6.1,6,128,799
+"Apple","iPhone 13",6.1,4,128,799
 "Samsung","Galaxy S22",6.2,8,256,899
 "Google","Pixel 6",6.0,8,128,699
 "OnePlus","9 Pro",6.7,12,256,999
@@ -32,12 +32,12 @@
 "Apple","iPhone 13 Mini",5.4,6,64,599
 "Samsung","Galaxy S22+",5.4,6,128,499
 "Google","Pixel 6",5.4,6,128,499
-"OnePlus","9 Mini",5.4,6,128,499
+"OnePlus","9",5.4,6,128,499
 "Xiaomi","Mi 11 Mini",5.4,6,128,399
 "Apple","iPhone 12 Mini",5.4,6,64,499
 "Samsung","Galaxy S21",5.4,6,128,499
 "Google","Pixel 5a",5.4,6,128,399
-"OnePlus","8 Mini",5.4,6,128,399
+"OnePlus","8 Pro",5.4,6,128,399
 "Xiaomi","Mi 10 Mini",5.4,6,128,299
 "Apple","iPhone 11 Pro Max",5.4,6,64,399
 "Samsung","Galaxy S20 FE",5.4,6,128,399
